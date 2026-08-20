@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/uma_paper">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnMenu"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_button_outline"
+                android:clickable="true"
+                android:contentDescription="Abrir menu"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="☰"
+                android:textColor="@color/uma_ink"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UMA"
+                    android:textColor="@color/uma_ink"
+                    android:fontFamily="@font/fraunces_variable"
+                    android:textSize="31sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="6dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Carro UMA"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/uma_car_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnPlanShortcut"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_button_outline"
+                android:clickable="true"
+                android:contentDescription="Planejar turno"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="◷"
+                android:textColor="@color/uma_ink"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tabToday"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="HOJE"
+                android:textColor="@color/uma_ink"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tabHistory"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="HISTÓRICO"
+                android:textColor="@color/uma_muted"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tabData"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="DADOS"
+                android:textColor="@color/uma_muted"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#B8B0A6" />
+
+        <LinearLayout
+            android:id="@+id/panelToday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_card_dark"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/heroCycleLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CICLO 1 · AGUARDANDO INÍCIO"
+                    android:textColor="@color/uma_card"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                android:id="@+id/heroRevenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="R$ 0,00"
+                    android:textColor="@color/uma_card"
+                    android:fontFamily="@font/fraunces_variable"
+                    android:textSize="42sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/heroCycleMessage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="planeje seu turno para começar"
+                        android:textColor="@color/uma_card"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/heroTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--:--"
+                        android:textColor="@color/uma_card"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/heroProgressFrame"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_progress">
+
+                    <View
+                        android:id="@+id/heroProgressFill"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_progress_fill" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/shiftPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="TURNO AINDA NÃO PLANEJADO"
+                    android:textColor="#D8D1C5"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="META/H" android:textColor="@color/uma_muted" android:textSize="10sp" />
+                    <TextView android:id="@+id/metricHour" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R$ 67" android:textColor="@color/uma_ink" android:fontFamily="@font/fraunces_variable" android:textSize="21sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="META/KM" android:textColor="@color/uma_muted" android:textSize="10sp" />
+                    <TextView android:id="@+id/metricKm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R$ 2,20" android:textColor="@color/uma_ink" android:fontFamily="@font/fraunces_variable" android:textSize="21sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CORRIDAS" android:textColor="@color/uma_muted" android:textSize="10sp" />
+                    <TextView android:id="@+id/metricRides" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/uma_ink" android:fontFamily="@font/fraunces_variable" android:textSize="21sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_card"
+                android:elevation="3dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ÚLTIMA CORRIDA" android:textColor="@color/uma_muted" android:textSize="10sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/lastRideTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="Nenhuma corrida concluída" android:textColor="@color/uma_ink" android:textSize="16sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/lastRideDetails" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="Os dados aparecerão depois da primeira corrida." android:textColor="@color/uma_muted" android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="92dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Ilustração de carro"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/uma_car_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btnStartSession"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button_black"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="▶  INICIAR"
+                    android:textColor="@color/uma_card"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/btnPlanShift"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="◷  PLANEJAR"
+                    android:textColor="@color/uma_ink"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="Planeje o turno e confirme as permissões antes de iniciar."
+                android:textColor="@color/uma_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/panelHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="HISTÓRICO" android:textColor="@color/uma_ink" android:textSize="21sp" android:textStyle="bold" />
+                <ImageView android:layout_width="62dp" android:layout_height="52dp" android:adjustViewBounds="true" android:contentDescription="Mapa do histórico" android:scaleType="centerInside" android:src="@drawable/history_map_icon" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/historyPeriodLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="hoje" android:textColor="@color/uma_muted" android:textSize="12sp" />
+
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:scrollbars="none">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:id="@+id/filterToday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_chip" android:clickable="true" android:focusable="true" android:text="HOJE" android:textColor="@color/uma_ink" android:textSize="11sp" />
+                    <TextView android:id="@+id/filterYesterday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:clickable="true" android:focusable="true" android:text="ONTEM" android:textColor="@color/uma_ink" android:textSize="11sp" />
+                    <TextView android:id="@+id/filterMonth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:clickable="true" android:focusable="true" android:text="MÊS" android:textColor="@color/uma_ink" android:textSize="11sp" />
+                    <TextView android:id="@+id/filter3Months" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:clickable="true" android:focusable="true" android:text="3 MESES" android:textColor="@color/uma_ink" android:textSize="11sp" />
+                    <TextView android:id="@+id/filter6Months" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:clickable="true" android:focusable="true" android:text="6 MESES" android:textColor="@color/uma_ink" android:textSize="11sp" />
+                    <TextView android:id="@+id/filterAll" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:clickable="true" android:focusable="true" android:text="TUDO" android:textColor="@color/uma_ink" android:textSize="11sp" />
+                    <TextView android:id="@+id/filterCustom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:clickable="true" android:focusable="true" android:text="PERÍODO" android:textColor="@color/uma_ink" android:textSize="11sp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/historyList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_card"
+                android:text="Histórico vazio."
+                android:textColor="@color/uma_ink"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/panelData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="SEUS DADOS" android:textColor="@color/uma_ink" android:textSize="21sp" android:textStyle="bold" />
+                <ImageView android:layout_width="72dp" android:layout_height="54dp" android:adjustViewBounds="true" android:contentDescription="Carro UMA" android:scaleType="centerInside" android:src="@drawable/uma_car_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dataMetaHour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_card"
+                android:text="Meta por hora"
+                android:textColor="@color/uma_ink"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/dataMetaKm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card"
+                android:text="Meta por quilômetro"
+                android:textColor="@color/uma_ink"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/dataShift"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card"
+                android:text="Turno"
+                android:textColor="@color/uma_ink"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/dataDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card"
+                android:text="Estatísticas"
+                android:textColor="@color/uma_ink"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/btnEditGoals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_button_outline"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="EDITAR METAS"
+                android:textColor="@color/uma_ink"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnPermissions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_button_outline"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="CONFERIR PERMISSÕES"
+                android:textColor="@color/uma_ink"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

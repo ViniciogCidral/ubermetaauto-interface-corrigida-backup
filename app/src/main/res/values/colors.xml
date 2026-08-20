@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="uma_ink">#111111</color>
+    <color name="uma_paper">#FBF8F1</color>
+    <color name="uma_card">#FFFDF9</color>
+    <color name="uma_line">#222222</color>
+    <color name="uma_muted">#6A655F</color>
+    <color name="uma_green">#24AE70</color>
+    <color name="uma_yellow">#E2AA20</color>
+    <color name="uma_red">#D34A48</color>
+</resources>

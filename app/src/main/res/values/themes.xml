@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.UberMetaAuto" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">@font/dm_sans_variable</item>
+        <item name="android:colorAccent">@color/uma_ink</item>
+        <item name="colorPrimary">@color/uma_ink</item>
+        <item name="colorSurface">@color/uma_paper</item>
+        <item name="android:navigationBarColor">@color/uma_paper</item>
+        <item name="android:statusBarColor">@color/uma_paper</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

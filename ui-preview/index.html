@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UberMetaAuto — laboratório visual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="studio">
+    <section class="intro">
+      <p class="eyebrow">UBERMETAUTO / LABORATÓRIO VISUAL</p>
+      <h1>DIRIJA<br>COM<br>CRITÉRIO<span>.</span></h1>
+      <p class="intro-copy">Um protótipo de interface. Preto, branco, linhas, pontos e decisões fáceis de enxergar em movimento.</p>
+      <div class="car-illustration" aria-hidden="true">
+        <svg viewBox="0 0 340 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M63 124h214l-11-47c-3-13-13-23-26-26l-70-17c-16-4-33 0-45 12L89 84c-9 10-16 23-19 40Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="m121 81 26-29c7-7 16-10 25-8l56 14c8 2 14 8 16 16l4 16H121V81Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M142 50v40M207 59v31M102 115h25M250 115h26" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="113" cy="130" r="22" fill="#FBFAF6" stroke="currentColor" stroke-width="4"/>
+          <circle cx="236" cy="130" r="22" fill="#FBFAF6" stroke="currentColor" stroke-width="4"/>
+          <circle cx="113" cy="130" r="7" fill="currentColor"/>
+          <circle cx="236" cy="130" r="7" fill="currentColor"/>
+          <path d="M48 142h25M23 155h49M288 145h30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M290 34c12 5 16 14 15 26M309 23c14 8 21 22 19 38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="note">A cor aparece apenas no aviso de decisão. Todo o resto permanece monocromático.</p>
+    </section>
+
+    <section class="phone-stage" aria-label="Prévia interativa do aplicativo">
+      <div class="phone">
+        <div class="phone-top"><span>9:41</span><span class="speaker"></span><span>●●●</span></div>
+        <header class="app-header">
+          <div class="wordmark">UMA <span class="reference-car logo-car" aria-label="ícone de carro"><img src="../../89a726dd81369ed4aa347a2f20fca1aa.jpg" alt=""></span></div>
+          <button class="icon-button" id="menuButton" aria-label="Abrir menu">☰</button>
+        </header>
+        <aside class="menu-panel" id="menuPanel">
+          <div><strong>MENU</strong><button id="closeMenu" aria-label="Fechar menu">×</button></div>
+          <button data-modal="goalsModal">METAS</button><button data-modal="permissionsModal">PERMISSÕES</button><button data-modal="shiftModal">PLANEJAR TURNO</button>
+          <small>Área de configurações do aplicativo.</small>
+        </aside>
+
+        <nav class="tabs" aria-label="Navegação do protótipo">
+          <button class="tab active" data-screen="home">HOJE</button>
+          <button class="tab" data-screen="history">HISTÓRICO</button>
+          <button class="tab" data-screen="stats">DADOS</button>
+        </nav>
+
+        <div class="screen active" id="home">
+          <section class="hero-card dotted-shadow">
+            <p class="label" id="cycleLabel">CICLO 1 · AGUARDANDO INÍCIO</p>
+            <p class="hero-number">R$ <strong id="revenue">0,00</strong></p>
+            <div class="hero-row"><span id="cycleMessage">planeje seu turno para começar</span><strong id="timer">00:00</strong></div>
+            <div class="progress"><span id="progressFill"></span></div>
+            <div class="shift-plan" id="shiftPlan">TURNO AINDA NÃO PLANEJADO</div>
+          </section>
+
+          <section class="stat-grid">
+            <article><span>meta/h</span><strong>R$ 72</strong></article>
+            <article><span>trabalho</span><strong>20 min</strong></article>
+            <article><span>vazio</span><strong>08 min</strong></article>
+          </section>
+
+          <section class="section-heading"><p>ÚLTIMA CORRIDA</p><span>concluída</span></section>
+          <section class="offer-card dotted-shadow" id="offerCard">
+            <div class="offer-title"><div><p class="label">UBERX · 2,4 KM ATÉ O CLIENTE</p><h2>R$ 18,70</h2></div><div class="offer-car reference-car" aria-hidden="true"><img src="../../89a726dd81369ed4aa347a2f20fca1aa.jpg" alt=""></div></div>
+            <div class="offer-data"><div><span>R$/km</span><strong>1,73</strong></div><div><span>tempo real</span><strong>31 min</strong></div><div><span>distância real</span><strong>10,8 km</strong></div><div><span>cliente</span><strong>4,95 ★</strong></div></div>
+            <div class="decision-preview" id="decisionPreview">
+              <span>AGUARDANDO ANÁLISE</span><b>?</b>
+            </div>
+            <div class="ride-actions" id="rideActions">
+              <button id="acceptRide">✓ ACEITAR</button><button id="rejectRide">× RECUSAR</button><button id="expireRide">⌛ EXPIRAR</button>
+            </div>
+          </section>
+
+          <div class="quick-actions">
+            <button id="startButton">▶ <span>INICIAR</span></button>
+            <button id="newOfferButton">↻ <span>NOVA OFERTA</span></button>
+          </div>
+          <p class="start-message" id="startMessage">Planeje o turno e confirme as permissões antes de iniciar.</p>
+        </div>
+
+        <div class="screen" id="history">
+          <section class="section-heading"><p>HISTÓRICO <span class="reference-history" aria-hidden="true"><img src="../../ab0b19c20c7bcb4f26286785171365eb.jpg" alt=""></span></p><span id="periodLabel">hoje</span></section>
+          <div class="period-row" aria-label="Período do histórico"><button class="period selected" data-period="hoje">HOJE</button><button class="period" data-period="ontem">ONTEM</button><button class="period" data-period="mês">MÊS</button><button class="period" data-period="3 meses">3 MESES</button><button class="period" data-period="6 meses">6 MESES</button><button class="period" id="customPeriodButton">PERÍODO</button></div>
+          <div class="filter-row"><button class="filter selected">TODAS</button><button class="filter">PEGAR</button><button class="filter">PASSAR</button></div>
+          <article class="ride-row"><div class="ride-mark pass"></div><div><strong>R$ 12,40</strong><span>11:42 · 34 min · 9,1 km</span></div><b>PASSAR</b></article>
+          <article class="ride-row"><div class="ride-mark take"></div><div><strong>R$ 24,80</strong><span>10:58 · 28 min · 7,8 km</span></div><b>PEGAR</b></article>
+          <article class="ride-row"><div class="ride-mark maybe"></div><div><strong>R$ 16,20</strong><span>10:11 · 25 min · 6,9 km</span></div><b>TALVEZ</b></article>
+        </div>
+
+        <div class="screen" id="stats">
+          <section class="section-heading"><p>SEUS DADOS <span class="reference-car heading-car" aria-hidden="true"><img src="../../89a726dd81369ed4aa347a2f20fca1aa.jpg" alt=""></span></p><span>hoje</span></section>
+          <section class="big-stat dotted-shadow"><span>média atual</span><strong>R$ 68,40/h</strong><p>quase na sua meta de R$ 72/h</p></section>
+          <section class="line-stat"><span>corridas concluídas</span><strong>04</strong></section>
+          <section class="line-stat"><span>melhor tipo hoje</span><strong>Priority</strong></section>
+          <section class="line-stat"><span>tempo vazio</span><strong>18%</strong></section>
+        </div>
+
+        <aside class="overlay-demo" id="overlayDemo" aria-label="Simulação de overlay">
+          <div class="overlay-heading"><strong id="overlayTitle">AGUARDANDO</strong><div class="overlay-controls"><button class="minimize-overlay" id="minimizeOverlay" aria-label="Minimizar tag">−</button><button class="close-overlay" id="closeOverlay" aria-label="Fechar overlay">×</button></div></div>
+          <small id="overlayText">aguardando oferta</small>
+        </aside>
+        <button class="minimized-overlay" id="minimizedOverlay" aria-label="Reabrir tag">UMA</button>
+        <div class="modal" id="goalsModal"><section><button class="modal-close" aria-label="Fechar">×</button><p class="label">CONFIGURAÇÃO</p><h2>SUAS METAS</h2><label>meta por hora <input value="72,00" inputmode="decimal" aria-label="Meta por hora"></label><label>meta por km <input value="2,20" inputmode="decimal" aria-label="Meta por km"></label><button class="modal-save">SALVAR METAS</button></section></div>
+        <div class="modal" id="permissionsModal"><section><button class="modal-close" aria-label="Fechar">×</button><p class="label">SISTEMA</p><h2>PERMISSÕES</h2><div class="permission-item"><b>✓</b><span>sobreposição<br><small>overlay liberado</small></span></div><div class="permission-item"><b>✓</b><span>acessibilidade<br><small>leitura de estados do Uber</small></span></div><div class="permission-item pending" id="capturePermission"><b>○</b><span>captura de tela<br><small>autorizar ao iniciar</small></span></div><button class="modal-save" id="grantPermissions">SIMULAR PERMISSÕES CONCEDIDAS</button></section></div>
+        <div class="modal" id="shiftModal"><section><button class="modal-close" aria-label="Fechar">×</button><p class="label">PLANEJAMENTO</p><h2>SEU TURNO</h2><label>começar às <input type="time" value="18:00" aria-label="Início do turno"></label><label>terminar às <input type="time" value="23:00" aria-label="Fim do turno"></label><label>pausa planejada <span class="time-pair"><input type="time" value="20:00"><em>até</em><input type="time" value="20:20"></span></label><button class="modal-save" id="saveShift">SALVAR TURNO</button></section></div>
+        <div class="modal" id="periodModal"><section><button class="modal-close" aria-label="Fechar">×</button><p class="label">HISTÓRICO</p><h2>PERÍODO ESPECÍFICO</h2><label>data inicial <input type="date" id="periodStart" aria-label="Data inicial"></label><label>data final <input type="date" id="periodEnd" aria-label="Data final"></label><button class="modal-save" id="applyCustomPeriod">APLICAR PERÍODO</button></section></div>
+        <div class="bottom-nav"><button class="active" data-screen="home">⌂</button><button data-screen="history">≡</button><button data-screen="stats">◌</button></div>
+      </div>
+    </section>
+
+    <aside class="simulator">
+      <p class="eyebrow">CONTROLES DE SIMULAÇÃO</p>
+      <h2>Teste a decisão<br>antes do Android.</h2>
+      <p>Estes botões só alteram a prévia. Depois que você aprovar o visual, os mesmos estados serão ligados à lógica real.</p>
+      <div class="simulation-buttons">
+        <button data-decision="take"><i></i> SIMULAR PEGAR</button>
+        <button data-decision="maybe"><i></i> SIMULAR TALVEZ</button>
+        <button data-decision="pass"><i></i> SIMULAR PASSAR</button>
+      </div>
+      <div class="notification-demo dotted-shadow" id="notificationDemo"><span class="bell">●</span><div><strong>UberMetaAuto</strong><p id="notificationText">R$ 25,00 | 40:00 | C12</p></div></div>
+      <p class="sim-note">No protótipo, verde, amarelo e vermelho existem apenas nos estados de decisão/notificação.</p>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

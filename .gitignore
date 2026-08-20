@@ -1,0 +1,23 @@
+# Arquivos gerados por Gradle e Android
+.gradle/
+**/build/
+build/
+apk-debug/
+*.apk
+*.aab
+.cxx/
+externalNativeBuild/
+
+# Configuracao local e chaves de assinatura
+local.properties
+keystore.properties
+*.jks
+*.keystore
+*.pem
+*.p12
+
+# IDE e sistema operacional
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

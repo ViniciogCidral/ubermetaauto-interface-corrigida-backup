@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">UberMetaAuto</string>
+    <string name="accessibility_description">Detecta mudanças na tela da Uber para analisar ofertas. Não aceita corridas automaticamente.</string>
+</resources>
